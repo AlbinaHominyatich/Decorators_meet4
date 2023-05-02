@@ -6,8 +6,8 @@ def my_decorator(func):
         func()
         print("та це тоже")
     return  wrapper
+@my_decorator
 def say_hello():
     print("Hello!")
-#туточки огортаємося
-say_hello = my_decorator(say_hello)
+
 say_hello()
