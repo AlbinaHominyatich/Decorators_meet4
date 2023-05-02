@@ -1,16 +1,12 @@
-# This is a sample Python script.
+#теорія декоратори
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def myWrapper(func):#3
+    def myInnerFunc(): #4
+        print("Inside wrapper")
+        func()#5
+    return myInnerFunc
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+@myWrapper #2
+def myFunc(): #6 це і є func()
+    print('Hello world!')
+myFunc() #1
