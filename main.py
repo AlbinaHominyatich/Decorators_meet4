@@ -1,12 +1,13 @@
 #теорія декоратори
-
-def myWrapper(func):#3
-    def myInnerFunc(): #4
-        print("Inside wrapper")
-        func()#5
-    return myInnerFunc
-
-@myWrapper #2
-def myFunc(): #6 це і є func()
-    print('Hello world!')
-myFunc() #1
+#приклад порівняння та синтаксису
+def my_decorator(func):
+    def wrapper():
+        print("та щось")
+        func()
+        print("та це тоже")
+    return  wrapper
+def say_hello():
+    print("Hello!")
+#туточки огортаємося
+say_hello = my_decorator(say_hello)
+say_hello()
